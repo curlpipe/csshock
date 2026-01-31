@@ -90,13 +90,13 @@ There are two classes you can add to `<button>` elements:
 - `primary` - the button that is recommended to click
 - `secondary` - the other option
 
-By default, buttons will be styled as primary by default.
+By default, buttons will be styled as primary.
 
 #### 🗺️ Navigation
 
-The `<nav>` tag is pre-configured to handle layouts automatically.
+The `<nav>` tag is pre-configured to be responsive as standard.
 
-It is stack by default, and will bunch when on mobile.
+It is bunch by default, and will stack when on mobile.
 
 ### 🪟 Layout System
 
