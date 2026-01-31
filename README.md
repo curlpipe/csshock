@@ -1,6 +1,4 @@
-# CSShock ⚡
-
-If you've ever found CSS cumbersome, try CSShock
+# CSShock
 
 ## ✨ Features
 
@@ -12,7 +10,7 @@ If you've ever found CSS cumbersome, try CSShock
 
 ## 📦 Installation
 
-### Download
+### ⬇️ Download
 
 Download the `csshock.css` file directly and include it in your project:
 
@@ -20,93 +18,27 @@ Download the `csshock.css` file directly and include it in your project:
 <link rel="stylesheet" href="path/to/csshock.css">
 ```
 
-### Edit
+### 📝 Edit
 
-There is a section at the top of the file that you can edit:
+Edit the `:root` part of the CSShock file to match your theme preferences. Or you can leave it to use the defaults.
 
-You can use the defaults, or you can modify them:
-
-- Choose your colour palette
-- Assign colors to your theme
-- Modify the spacing used throughout your website
-- Set up your font family, size and weights
-- Provide border width and radius sizes
-- Tweak how shadows will look
-
-```css
-:root {
-  /* Palette */
-  --red: #BD5757;
-  --orange: #BD7057;
-  --yellow: #BD9657;
-  --green: #59BD57;
-  --blue: #578BBD;
-  --purple: #7457BD;
-  --pink: #BD57BD;
-  --white: #E0E0E0;
-  --black: #1A1A2E;
-  --dark-grey: #2E2E2E;
-  --light-grey: #737373;
-  
-  /* Theme */
-  --text-color: var(--black);
-  --background-color: var(--white);
-  --accent-color-1: var(--purple);
-  --accent-color-2: var(--blue);
-  --border-color: var(--accent-color-1);
-  --code-background: var(--dark-grey);
-
-  /* Spacing */
-  --spacing-xxs: 0.25rem;
-  --spacing-xs: 0.375rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 2.5rem;
-  --spacing-xl: 5rem;
-  --spacing-xxl: 9.5rem;
-
-  /* Fonts */
-  --font-family: 'DM Sans', sans-serif;
-  --font-size-xxs: 0.6rem;
-  --font-size-xs: 0.8rem;
-  --font-size-sm: 1rem;
-  --font-size-md: 1.2rem;
-  --font-size-lg: 1.4rem;
-  --font-size-xl: 1.8rem;
-  --font-size-xxl: 2.5rem;
-  --font-weight-light: 400;
-  --font-weight-normal: 500;
-  --font-weight-bold: 700;
-
-  /* Border */
-  --border-width: 1px;
-  --border-radius-sm: 1rem;
-  --border-radius-md: 1.4rem;
-  --border-radius-lg: 2rem;
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-```
-
-### Use
+### 🔧 Use
 
 See documentation below on how to get the best out of CSShock
 
 ## 📖 Documentation
 
-### Basic Styling
+### 🎨 Basic Styling
 
-#### Containers
+#### 📦 Containers
 
 Use these classes to add standardized padding to your main content areas:
+
 `container-xxs`, `container-xs`, `container-sm`, `container-md`, `container-lg`, `container-xl`, `container-xxl`
 
 These are great for breaking up sections with divs and adding nice spacing to the sides of your content
 
-#### Colours
+#### 🌈 Colours
 
 Add the following classes to style your components with your chosen theme colours
 
@@ -116,13 +48,13 @@ Text (Foreground): `fg-red`, `fg-orange`, `fg-yellow`, `fg-green`, `fg-blue`, `f
 
 Note that the accent colours are chosen in the `:root` part of your CSShock file.
 
-#### Dark & Light Mode
+#### 🌗 Dark & Light Mode
 
 Toggle your entire theme by adding a single class to the `<body>` tag:
 - `theme-light`: Light mode
 - `theme-dark`: Dark mode
 
-#### Size and Spacing
+#### 📏 Size and Spacing
 
 Replace `[size]` with: `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, or `xxl`.
 
@@ -133,7 +65,6 @@ Replace `[size]` with: `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, or `xxl`.
 - **Padding (Bottom):** `pb-[size]`
 - **Padding (Left):** `pl-[size]`
 - **Padding (Right):** `pr-[size]`
-
 - **Margin (All sides):** `m-[size]`
 - **Margin (Left and Right):** `mx-[size]`
 - **Margin (Top and Bottom):** `my-[size]`
@@ -142,17 +73,17 @@ Replace `[size]` with: `xxs`, `xs`, `sm`, `md`, `lg`, `xl`, or `xxl`.
 - **Margin (Left):** `ml-[size]`
 - **Margin (Right):** `mr-[size]`
 
-#### Typography
+#### 🔡 Typography
 
 - **Alignment:** `font-left`, `font-center`, `font-right`
 - **Weight:** `font-weight-light`, `font-weight-normal`, `font-weight-bold`
 - **Sizing:** `font-xxs`, `font-xs`, `font-sm`, `font-md`, `font-lg`, `font-xl`, `font-xxl`.
 
-#### Components
+#### 🧩 Components
 
 Most components in CSShock already have styles applied to them by default, so no need to add 100 classes to your elements.
 
-#### Buttons
+#### 🔘 Buttons
 
 There are two classes you can add to `<button>` elements:
 
@@ -161,13 +92,13 @@ There are two classes you can add to `<button>` elements:
 
 By default, buttons will be styled as primary by default.
 
-#### Navigation
+#### 🗺️ Navigation
 
 The `<nav>` tag is pre-configured to handle layouts automatically.
 
 It is stack by default, and will bunch when on mobile.
 
-### Layout System
+### 🪟 Layout System
 
 The most innovative part of CSShock is its layout system.
 
@@ -177,11 +108,11 @@ Let's say you have some HTML elements you want to display.
 
 In CSShock, there are two main ways to organise this data
 
-#### Stack
+#### 🥞 Stack
 
 Think of a Stack like a stack of pancakes. Each element you place inside it sits directly on top of the next, growing vertically.
 
-![Stack of pancakes](https://static.wikia.nocookie.net/goodfood/images/e/e9/Stack-of-pancake-mix.jpg/revision/latest?cb=20180619222536)
+<img width="200px" src="https://static.wikia.nocookie.net/goodfood/images/e/e9/Stack-of-pancake-mix.jpg/revision/latest?cb=20180619222536"></img>
 
 This is good if you're creating vertical lists or forms.
 
@@ -199,11 +130,11 @@ The good news is that you don't need to decipher lots of ugly HTML classes, you 
 
 All images will be on top of each other
 
-#### Bunch
+#### 🍌 Bunch
 
 Think of a Bunch like a bunch of bananas hanging side-by-side. Elements are placed in a horizontal row.
 
-![Bunch of bananas](https://upload.wikimedia.org/wikipedia/commons/6/69/Banana.png)
+<img width="200px" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Banana.png"></img>
 
 This is good if you're creating a navbar, gallery of images side-by-side or some horizontal group of buttons.
 
