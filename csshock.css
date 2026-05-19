@@ -1,5 +1,5 @@
 /*
-  CSShock v2.0: rapid styling for your web interfaces
+  CSShock v3.0: rapid styling for your web interfaces
   
   Step 1: Download the single css file and configure your styling preferences in :root
   Step 2: Link CSShock to your HTML files
@@ -29,6 +29,11 @@
   --accent-color-2: var(--blue);
   --border-color: var(--accent-color-1);
   --code-background: var(--dark-grey);
+  --primary-button-color: var(--accent-color-1);
+  --primary-button-text-color: var(--white);
+  --secondary-button-color: transparent;
+  --secondary-button-text-color: var(--black);
+  --button-hover-color: var(--accent-color-2);
 
   /* Spacing */
   --spacing-xxs: 0.25rem;
@@ -87,11 +92,7 @@ body {
 .theme-dark {
   --text-color: var(--white) !important;
   --background-color: var(--black) !important;
-  --border-color: var(--light-grey);
-}
-
-.theme-dark button.secondary {
-  color: var(--white);
+  --secondary-button-text-color: var(--white);
 }
 
 .theme-light {
@@ -101,17 +102,17 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
   line-height: 1.2;
 }
 
 h1 { font-size: var(--font-size-xxl); font-weight: var(--font-weight-bold); }
 h2 { font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); }
 h3 { font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); }
-h4 { font-size: var(--font-size-md); font-weight: var(--font-weight-normal); }
-h5 { font-size: var(--font-size-sm); font-weight: var(--font-weight-normal); }
-h6 { font-size: var(--font-size-xs); font-weight: var(--font-weight-normal); }
+h4 { font-size: var(--font-size-lg); font-weight: var(--font-weight-normal); }
+h5 { font-size: var(--font-size-md); font-weight: var(--font-weight-normal); }
+h6 { font-size: var(--font-size-sm); font-weight: var(--font-weight-normal); }
 
 /* Paragraphs */
 p {
@@ -146,27 +147,27 @@ button, input[type="submit"] {
   font-weight: var(--font-weight-light);
   border-radius: var(--border-radius-md);
   border: var(--border-width) solid var(--accent-color-1);
-  color: var(--white);
-  background-color: var(--accent-color-1);
+  color: var(--primary-button-text-color);
+  background-color: var(--primary-button-color);
   box-shadow: var(--shadow-sm);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 button.primary, input[type="submit"].primary {
-  color: var(--white);
-  background-color: var(--accent-color-1);
   border: var(--border-width) solid var(--accent-color-1);
+  color: var(--primary-button-text-color);
+  background-color: var(--primary-button-color);
 }
 
 button.secondary, input[type="submit"].secondary {
-  color: var(--white);
-  background-color: transparent;
   border: var(--border-width) solid var(--accent-color-1);
+  color: var(--secondary-button-text-color);
+  background-color: var(--secondary-button-color);
 }
 
 button:hover, input[type="submit"]:hover {
-  background-color: var(--accent-color-2);
+  background-color: var(--button-hover-color);
   border-color: var(--accent-color-2);
 }
 
@@ -204,7 +205,6 @@ input:disabled, textarea:disabled, select:disabled {
   cursor: not-allowed;
 }
 
-
 /* Tables */
 table {
   width: 100%;
@@ -231,12 +231,11 @@ caption {
 
 /* Lists */
 ul, ol {
-  margin-bottom: var(--spacing-md);
-  padding-left: var(--spacing-lg);
+  padding-left: var(--spacing-md);
 }
 
 li {
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-xxs);
 }
 
 /* Images */
@@ -276,8 +275,9 @@ nav {
 code {
   font-family: monospace;
   background-color: var(--code-background);
-  padding: var(--spacing-xxs) var(--spacing-sm);
   border-radius: var(--border-radius-sm);
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
 pre {
@@ -294,14 +294,14 @@ hr {
   border: none;
   height: 1px;
   background-color: var(--border-color);
-  margin: var(--spacing-lg) 0;
+  margin: var(--spacing-md) 0;
 }
 
 /* Blockquote */
 blockquote {
   border-left: var(--border-width) solid var(--border-color);
-  padding-left: var(--spacing-md);
-  margin: var(--spacing-lg) 0;
+  padding-left: var(--spacing-sm);
+  margin-left: var(--spacing-xxs);
 }
 
 /* Containers */
@@ -353,6 +353,33 @@ blockquote {
   padding-top: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
 }
+
+:has(.outer-xxs),
+:has(.outer-xs),
+:has(.outer-sm),
+:has(.outer-md),
+:has(.outer-lg),
+:has(.outer-xl),
+:has(.outer-xxl) {
+  display: flex;
+  justify-content: center;
+}
+
+.outer-xxs { max-width: 20rem; width: 100%; }
+.outer-xs { max-width: 30rem; width: 100%; }
+.outer-sm { max-width: 40rem; width: 100%; }
+.outer-md { max-width: 48rem; width: 100%; }
+.outer-lg { max-width: 64rem; width: 100%; }
+.outer-xl { max-width: 80rem; width: 100%; }
+.outer-xxl { max-width: 96rem; width: 100%; }
+
+.min-width-xxs { min-width: 20rem; }
+.min-width-xs { min-width: 30rem; }
+.min-width-sm { min-width: 40rem; }
+.min-width-md { min-width: 48rem; }
+.min-width-lg { min-width: 64rem; }
+.min-width-xl { min-width: 80rem; }
+.min-width-xxl { min-width: 96rem; }
 
 .max-width-xxs { max-width: 20rem; }
 .max-width-xs { max-width: 30rem; }
