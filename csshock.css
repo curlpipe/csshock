@@ -1,39 +1,52 @@
 /*
-  CSShock v3.1: rapid styling for your web interfaces
+  CSShock v4.0: rapid styling for your web interfaces
   
   Step 1: Download the single css file and configure your styling preferences in :root
   Step 2: Link CSShock to your HTML files
   Step 3: Get designing with simple utility classes and innovative stack-bunch layouts
 */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
   /* Palette */
-  --red: #BD5757;
-  --orange: #BD7057;
-  --yellow: #BD9657;
-  --green: #59BD57;
-  --blue: #578BBD;
-  --purple: #7457BD;
-  --pink: #BD57BD;
-  --white: #E0E0E0;
+  --red: #F55B5B;
+  --orange: #F5915B;
+  --yellow: #F5DB5B;
+  --green: #5BF56F;
+  --blue: #5b99f5;
+  --purple: #8B5CF6;
+  --pink: #E85BF5;
+  --white: #FFFFFF;
   --black: #1A1A2E;
   --dark-grey: #2E2E2E;
   --light-grey: #737373;
   
-  /* Theme */
+  /* General Colours */
   --text-color: var(--black);
   --background-color: var(--white);
+
   --accent-color-1: var(--purple);
   --accent-color-2: var(--blue);
+
   --border-color: var(--accent-color-1);
+
   --code-background: var(--dark-grey);
+
+  /* Buttons */
   --primary-button-color: var(--accent-color-1);
+  --primary-button-color-hover: var(--accent-color-1);
   --primary-button-text-color: var(--white);
+  --primary-button-text-color-hover: var(--white);
+  --primary-button-border: var(--border-width) solid var(--accent-color-1);
+  --primary-button-border-hover: var(--border-width) solid transparent;
+
   --secondary-button-color: transparent;
-  --secondary-button-text-color: var(--black);
-  --button-hover-color: var(--accent-color-2);
+  --secondary-button-color-hover: rgba(from var(--accent-color-1) r g b / 50%);
+  --secondary-button-text-color: var(--white);
+  --secondary-button-text-color-hover: var(--white);
+  --secondary-button-border: var(--border-width) solid var(--accent-color-1);
+  --secondary-button-border-hover: var(--border-width) solid transparent;
 
   /* Spacing */
   --spacing-xxs: 0.25rem;
@@ -45,7 +58,7 @@
   --spacing-xxl: 9.5rem;
 
   /* Fonts */
-  --font-family: 'DM Sans', sans-serif;
+  --font-family: "Lato", sans-serif;
   --font-size-xxs: 0.7rem;
   --font-size-xs: 0.85rem;
   --font-size-sm: 1rem;
@@ -58,10 +71,10 @@
   --font-weight-bold: 700;
 
   /* Border */
-  --border-width: 1px;
-  --border-radius-sm: 1rem;
-  --border-radius-md: 1.4rem;
-  --border-radius-lg: 2rem;
+  --border-width: 1.5px;
+  --border-radius-sm: 0.5rem;
+  --border-radius-md: 0.7rem;
+  --border-radius-lg: 1rem;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -103,6 +116,7 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family);
   margin-top: var(--spacing-sm);
   margin-bottom: var(--spacing-sm);
   line-height: 1.2;
@@ -117,12 +131,14 @@ h6 { font-size: var(--font-size-sm); font-weight: var(--font-weight-normal); }
 
 /* Paragraphs */
 p {
+  font-family: var(--font-family);
   margin-bottom: var(--spacing-md);
   line-height: 1.6;
 }
 
 /* Links */
 a {
+  font-family: var(--font-family);
   color: var(--accent-color-2);
   text-decoration: none;
 }
@@ -146,8 +162,8 @@ button, input[type="submit"] {
   display: inline-block;
   padding: var(--spacing-sm) var(--spacing-md);
   font-weight: var(--font-weight-light);
+  font-family: var(--font-family);
   border-radius: var(--border-radius-md);
-  border: var(--border-width) solid var(--accent-color-1);
   color: var(--primary-button-text-color);
   background-color: var(--primary-button-color);
   box-shadow: var(--shadow-sm);
@@ -156,23 +172,30 @@ button, input[type="submit"] {
 }
 
 button.primary, input[type="submit"].primary {
-  border: var(--border-width) solid var(--accent-color-1);
   color: var(--primary-button-text-color);
   background-color: var(--primary-button-color);
+  border: var(--primary-button-border);
 }
 
 button.secondary, input[type="submit"].secondary {
-  border: var(--border-width) solid var(--accent-color-1);
   color: var(--secondary-button-text-color);
   background-color: var(--secondary-button-color);
+  border: var(--secondary-button-border);
 }
 
-button:hover, input[type="submit"]:hover {
-  background-color: var(--button-hover-color);
-  border-color: var(--accent-color-2);
+button.primary:hover:enabled, input[type="submit"].primary:hover:enabled {
+  color: var(--primary-button-text-color-hover);
+  background-color: var(--primary-button-color-hover);
+  border: var(--primary-button-border-hover);
 }
 
-button:focus-visible, input[type="submit"]:focus-visible {
+button.secondary:hover:enabled, input[type="submit"].secondary:hover:enabled {
+  color: var(--secondary-button-text-color-hover);
+  background-color: var(--secondary-button-color-hover);
+  border: var(--secondary-button-border-hover);
+}
+
+button:focus-visible:enabled, input[type="submit"]:focus-visible:enabled {
   outline: 2px solid var(--accent-color-2);
   outline-offset: 2px;
 }
@@ -208,12 +231,14 @@ input:disabled, textarea:disabled, select:disabled {
 
 /* Tables */
 table {
+  font-family: var(--font-family);
   width: 100%;
   border-collapse: collapse;
   margin-bottom: var(--spacing-lg);
 }
 
 th, td {
+  font-family: var(--font-family);
   padding: var(--spacing-sm);
   border: var(--border-width) solid var(--accent-color-2);
   text-align: left;
@@ -225,6 +250,7 @@ th {
 }
 
 caption {
+  font-family: var(--font-family);
   font-size: var(--font-size-xs);
   margin-bottom: var(--spacing-xs);
   color: var(--light-grey);
@@ -232,15 +258,18 @@ caption {
 
 /* Lists */
 ul, ol {
+  font-family: var(--font-family);
   padding-left: var(--spacing-md);
 }
 
 li {
+  font-family: var(--font-family);
   margin-bottom: var(--spacing-xxs);
 }
 
 /* Images */
 img {
+  font-family: var(--font-family);
   max-width: 100%;
   height: auto;
   border-radius: var(--border-radius-md);
@@ -248,12 +277,14 @@ img {
 
 /* Forms */
 form {
+  font-family: var(--font-family);
   margin-top: var(--spacing-md);
   margin-bottom: var(--spacing-md);
 }
 
 /* Navbar */
 nav {
+  font-family: var(--font-family);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -300,6 +331,7 @@ hr {
 
 /* Blockquote */
 blockquote {
+  font-family: var(--font-family);
   border-left: var(--border-width) solid var(--border-color);
   padding-left: var(--spacing-sm);
   margin-left: var(--spacing-xxs);
@@ -698,8 +730,10 @@ stack[wrap], bunch[wrap] { flex-wrap: wrap; }
 .rounded-sm { border-radius: var(--border-radius-sm); }
 .rounded-md { border-radius: var(--border-radius-md); }
 .rounded-lg { border-radius: var(--border-radius-lg); }
+.rounded-none { border-radius: none; }
 
 /* Shadows */
 .shadow-sm { box-shadow: var(--shadow-sm); }
 .shadow-md { box-shadow: var(--shadow-md); }
 .shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-none { box-shadow: none; }
