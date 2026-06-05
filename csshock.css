@@ -1,5 +1,5 @@
 /*
-  CSShock v4.0: rapid styling for your web interfaces
+  CSShock v4.1: rapid styling for your web interfaces
   
   Step 1: Download the single css file and configure your styling preferences in :root
   Step 2: Link CSShock to your HTML files
@@ -449,6 +449,12 @@ blockquote {
 
 .bg-accent { background-color: var(--accent-color-1); }
 .fg-accent { color: var(--accent-color-1); }
+.bg-accent-2 { background-color: var(--accent-color-2); }
+.fg-accent-2 { color: var(--accent-color-2); }
+.bg-accent-fade { background-color: rgba(from var(--accent-color-1) r g b / 25%); }
+.fg-accent-fade { color: rgba(from var(--accent-color-1) r g b / 25%); }
+.bg-accent-2-fade { background-color: rgba(from var(--accent-color-2) r g b / 25%); }
+.fg-accent-2-fade { color: rgba(from var(--accent-color-2) r g b / 25%); }
 
 /* StackBunch Layouts */
 stack, bunch {
